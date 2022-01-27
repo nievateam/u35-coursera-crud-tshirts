@@ -3,7 +3,7 @@ import { useContext, useEffect } from 'react'
 import Edit from './Edit'
 import Delete from './Delete'
 
-import ShirtContext from '../../context/Shirt/ShirtContext'
+import ShirtContext from '../../../context/Shirt/ShirtContext'
 
 import {
   TableContainer,

@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react'
 
-import ShirtContext from '../../context/Shirt/ShirtContext'
+import ShirtContext from '../../../context/Shirt/ShirtContext'
 
 import { Link, Modal, Box, TextField, Button } from '@mui/material'
 

@@ -1,8 +1,8 @@
 import { useState, useContext } from 'react'
 
-import ShirtContext from '../../context/Shirt/ShirtContext'
 
 import { Modal, Box, Button, TextField } from '@mui/material'
+import ShirtContext from '../../../context/Shirt/ShirtContext'
 
 export default function ModalShirt() {
   const [open, setOpen] = useState(false)
@@ -45,7 +45,7 @@ export default function ModalShirt() {
             color="success"
             onClick={handleOpen}
           >
-            Nuevo
+            Agregar nuevo producto
           </Button>
         </Box>
 

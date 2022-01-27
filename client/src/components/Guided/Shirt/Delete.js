@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react'
 
-import ShirtContext from '../../context/Shirt/ShirtContext'
+import ShirtContext from '../../../context/Shirt/ShirtContext'
 
 import { Link, Modal, Box, Button } from '@mui/material'
 
@@ -15,8 +15,6 @@ export default function Delete(props) {
 
     handleClose()
   }
-
-  console.log(msg)
 
   const handleClose = () => setOpen(false)
   const handleOpen = () => setOpen(true)

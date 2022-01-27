@@ -1,6 +1,6 @@
 import CssBaseline from '@mui/material/CssBaseline';
 
-
+import ShirtState from './context/Shirt/ShirtState'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Exercise from './components/Exercise/Exercise';
 import Guided from './components/Guided/Guided';
@@ -9,8 +9,12 @@ import Project from './components/Project/Project';
 
 function App() {  
   return (
-    
+
+	
+	<ShirtState>
     <CssBaseline>
+
+
 
       <BrowserRouter>
         <Routes>
@@ -22,6 +26,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </CssBaseline>
+	</ShirtState>
   )
 }
 

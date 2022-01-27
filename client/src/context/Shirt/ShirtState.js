@@ -1,6 +1,6 @@
 import { useReducer } from 'react'
 
-import axiosClientConnect from './../../config/axiosclient'
+import axiosClientConnect from './../../config/axios'
 
 import ShirtContext from './ShirtContext'
 import ShirtReducer from './ShirtReducer'
