@@ -39,7 +39,7 @@ export default function TableList() {
       {
         msg ? 
           (
-            <Stack sx={{ width: '100%' }} spacing={2}>
+            <Stack sx={{ width: '100%', my: 2 }} spacing={2}>
               <Alert onClose={() => { resetMsg() }} severity="info">{ msg }</Alert>
             </Stack>
           )
