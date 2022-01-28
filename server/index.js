@@ -10,7 +10,7 @@ require('dotenv').config()
 
 connectDB()
 
-const PORT = process.env.SERVER_PORT || 3005
+const PORT = process.env.PORT || 3005
 
 app.use(cors())
 app.use(express.json())
