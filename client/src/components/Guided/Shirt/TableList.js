@@ -22,7 +22,7 @@ export default function TableList() {
 
   useEffect(() => {
     const fetchShirts = () => {
-      
+
       return loadShirts()
     }
 
@@ -35,9 +35,9 @@ export default function TableList() {
         <Table sx={{ maxWidth: 'lg' }}>
           <TableHead>
             <TableRow>
-              <TableCell align="center">Nombre</TableCell>
-              <TableCell align="center">Descripción</TableCell>
-              <TableCell align="center">Precio</TableCell>
+              <TableCell align="center">Name</TableCell>
+              <TableCell align="center">Description</TableCell>
+              <TableCell align="center">Price</TableCell>
               <TableCell align="center">-</TableCell>
               <TableCell align="center">-</TableCell>
             </TableRow>

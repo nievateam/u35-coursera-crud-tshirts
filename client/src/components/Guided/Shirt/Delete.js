@@ -8,7 +8,7 @@ export default function Delete(props) {
   const [open, setOpen] = useState(false)
 
   const shirtCtx = useContext(ShirtContext)
-  const { msg, deleteShirt } = shirtCtx
+  const { deleteShirt } = shirtCtx
 
   const handleDelete = (id) => {
     deleteShirt(id)
@@ -28,7 +28,7 @@ export default function Delete(props) {
           handleOpen()
         }}
       >
-        Eliminar
+        Delete
       </Link>
 
       <Modal open={open} onClose={handleClose}>
@@ -53,7 +53,7 @@ export default function Delete(props) {
                 justifyContent: 'center',
               }}
             >
-              <p>Esta seguro que desea eliminar este registro?</p>
+              <p>Are you sure you want to proceed?</p>
             </Box>
             <Box
               sx={{
@@ -68,7 +68,7 @@ export default function Delete(props) {
                 sx={{ m: 2 }}
                 onClick={handleClose}
               >
-                Cancelar
+                Cancel
               </Button>
 
               <Button
@@ -81,7 +81,7 @@ export default function Delete(props) {
                   handleDelete(props.uuid)
                 }}
               >
-                Aceptar
+                Sure. Delete the item
               </Button>
             </Box>
           </Box>

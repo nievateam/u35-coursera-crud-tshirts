@@ -53,7 +53,7 @@ export default function Edit(props) {
           handleOnClick(props.uuid)
         }}
       >
-        Actualizar
+        Update
       </Link>
 
       <Modal open={open} onClose={handleClose}>
@@ -79,7 +79,7 @@ export default function Edit(props) {
                       required
                       fullWidth
                       size="small"
-                      label="Nombre del artículo"
+                      label="Name"
                       sx={{ pb: 2 }}
                       name="name"
                       defaultValue={item.name}
@@ -89,7 +89,7 @@ export default function Edit(props) {
                       required
                       fullWidth
                       size="small"
-                      label="Descripción del artículo"
+                      label="Description"
                       sx={{ pb: 2 }}
                       name="description"
                       defaultValue={item.description}
@@ -99,7 +99,7 @@ export default function Edit(props) {
                       required
                       fullWidth
                       size="small"
-                      label="URI de la imagen del artículo"
+                      label="Image URL"
                       sx={{ pb: 2 }}
                       name="image"
                       defaultValue={item.image}
@@ -109,7 +109,7 @@ export default function Edit(props) {
                       required
                       fullWidth
                       size="small"
-                      label="Precio del artículo"
+                      label="Price"
                       sx={{ pb: 2 }}
                       name="price"
                       defaultValue={item.price}
@@ -132,7 +132,7 @@ export default function Edit(props) {
                 sx={{ m: 2 }}
                 onClick={handleClose}
               >
-                Cancelar
+                Cancel
               </Button>
 
               <Button
@@ -142,7 +142,7 @@ export default function Edit(props) {
                 color="info"
                 sx={{ m: 2 }}
               >
-                Actualizar
+                Update
               </Button>
             </Box>
           </form>
