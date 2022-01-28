@@ -16,15 +16,17 @@ import {
 } from '@mui/material'
 
 export default function TableList() {
+
   const shirtCtx = useContext(ShirtContext)
   const { shirts, loadShirts } = shirtCtx
 
   useEffect(() => {
     const fetchShirts = () => {
+      
       return loadShirts()
     }
+
     fetchShirts(loadShirts)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

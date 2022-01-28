@@ -53,7 +53,7 @@ export default function Delete(props) {
                 justifyContent: 'center',
               }}
             >
-              <p>Esta seguro que desea eliminar este registro ?</p>
+              <p>Esta seguro que desea eliminar este registro?</p>
             </Box>
             <Box
               sx={{
