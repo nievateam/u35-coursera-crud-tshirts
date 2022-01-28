@@ -3,6 +3,10 @@ import { useContext, useEffect } from 'react'
 import Edit from './Edit'
 import Delete from './Delete'
 
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+
+
 import ShirtContext from '../../../context/Shirt/ShirtContext'
 
 import {
@@ -18,7 +22,8 @@ import {
 export default function TableList() {
 
   const shirtCtx = useContext(ShirtContext)
-  const { shirts, loadShirts } = shirtCtx
+  
+  const { shirts, loadShirts, msg, resetMsg } = shirtCtx
 
   useEffect(() => {
     const fetchShirts = () => {
@@ -31,10 +36,21 @@ export default function TableList() {
 
   return (
     <>
+      {
+        msg ? 
+          (
+            <Stack sx={{ width: '100%' }} spacing={2}>
+              <Alert onClose={() => { resetMsg() }} severity="info">{ msg }</Alert>
+            </Stack>
+          )
+        :
+        null
+      }
+
       <TableContainer component={Paper}>
         <Table sx={{ maxWidth: 'lg' }}>
           <TableHead>
-            <TableRow>
+            <TableRow sx={{ backgroundColor: "#f1f1f1"}}>
               <TableCell align="center">Name</TableCell>
               <TableCell align="center">Description</TableCell>
               <TableCell align="center">Price</TableCell>

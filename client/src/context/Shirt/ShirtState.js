@@ -10,12 +10,13 @@ import {
   POST_SHIRT,
   DELETE_SHIRT,
   PUT_SHIRT,
+  RESET_MSG
 } from '../types/actionType'
 
 const ShirtState = (props) => {
   const initialState = {
     shirts: [],
-    msg: {},
+    msg: ""
   }
 
   const [globalState, dispatch] = useReducer(ShirtReducer, initialState)
@@ -46,8 +47,13 @@ const ShirtState = (props) => {
         type: POST_SHIRT,
         payload: postShirt.data.msg,
       })
+
+      return
+
     } catch (error) {
-      console.log(error)
+
+      return error.response.data.msg
+
     }
   }
 
@@ -62,10 +68,13 @@ const ShirtState = (props) => {
 
       dispatch({
         type: PUT_SHIRT,
-        payload: putShirt.data.msg,
+        payload: putShirt.data.msg
       })
+
     } catch (error) {
-      console.log(error)
+      
+      return error.response.data.msg
+
     }
   }
 
@@ -86,6 +95,8 @@ const ShirtState = (props) => {
     }
   }
 
+  const resetMsg = () => dispatch({ type: RESET_MSG })
+
   return (
     <ShirtContext.Provider
       value={{
@@ -94,6 +105,7 @@ const ShirtState = (props) => {
         addShirt,
         editShirt,
         deleteShirt,
+        resetMsg,
         msg: globalState.msg,
       }}
     >

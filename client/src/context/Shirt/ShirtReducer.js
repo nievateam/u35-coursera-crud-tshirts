@@ -3,6 +3,7 @@ import {
   POST_SHIRT,
   DELETE_SHIRT,
   PUT_SHIRT,
+  RESET_MSG
 } from '../types/actionType'
 
 const reducer = (globalState, action) => {
@@ -29,6 +30,12 @@ const reducer = (globalState, action) => {
       return {
         ...globalState,
         msg: action.payload,
+      }
+
+    case RESET_MSG:
+      return {
+        ...globalState,
+        msg: ""
       }
 
     default:

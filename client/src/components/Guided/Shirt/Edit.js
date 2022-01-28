@@ -14,6 +14,8 @@ export default function Edit(props) {
   const [id, setId] = useState(null)
   const [shirtEdited, setShirtEdited] = useState({})
 
+  const [msg, setMsg] = useState("")
+
   const handleOnClick = (uuid) => {
     setId(uuid)
 

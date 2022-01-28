@@ -1,11 +1,10 @@
 import { useState, useContext } from 'react'
-
-
-import { Modal, Box, Button, TextField } from '@mui/material'
+import { Modal, Box, Button, TextField, Alert, Stack } from '@mui/material'
 import ShirtContext from '../../../context/Shirt/ShirtContext'
 
 export default function ModalShirt() {
   const [open, setOpen] = useState(false)
+  const [msg, setMsg] = useState("")
 
   const shirtCtx = useContext(ShirtContext)
   const { addShirt } = shirtCtx
@@ -17,7 +16,7 @@ export default function ModalShirt() {
     price: '',
   })
 
-  const handleOnTyping = (evt) => {
+  const handleType = (evt) => {
     return setShirt({
       ...shirt,
       [evt.target.name]: evt.target.value,
@@ -27,9 +26,17 @@ export default function ModalShirt() {
   const handleAddShirt = async (evt) => {
     evt.preventDefault()
 
-    await addShirt(shirt)
+    const result = await addShirt(shirt)
 
-    handleClose()
+    if (result) {
+
+      return setMsg(result)
+
+    }
+
+    setMsg("")
+
+    return handleClose()
   }
 
   const handleClose = () => setOpen(false)
@@ -45,7 +52,7 @@ export default function ModalShirt() {
             color="success"
             onClick={handleOpen}
           >
-            Agregar nuevo producto
+            Add article
           </Button>
         </Box>
 
@@ -69,52 +76,57 @@ export default function ModalShirt() {
                 required
                 fullWidth
                 size="small"
-                label="Nombre del artículo"
+                label="Name"
                 sx={{ pb: 2 }}
                 name="name"
-                onChange={handleOnTyping}
+                onChange={handleType}
               />
               <TextField
                 required
                 fullWidth
                 size="small"
-                label="Descripción del artículo"
+                label="Description"
                 sx={{ pb: 2 }}
                 name="description"
-                onChange={handleOnTyping}
+                onChange={handleType}
               />
               <TextField
                 required
                 fullWidth
                 type="url"
                 size="small"
-                label="URI de la imagen del artículo"
+                label="Image URL"
                 sx={{ pb: 2 }}
                 name="image"
-                onChange={handleOnTyping}
+                onChange={handleType}
               />
               <TextField
                 required
                 fullWidth
                 size="small"
-                label="Precio del artículo"
+                label="Price"
                 sx={{ pb: 2 }}
                 name="price"
-                onChange={handleOnTyping}
+                onChange={handleType}
               />
 
-              <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
                 <Button
                   type="submit"
                   variant="contained"
                   size="small"
                   color="success"
                 >
-                  Agregar
+                  Add
                 </Button>
               </Box>
             </form>
+            {
+              msg ? <Alert sx={{ mt: 4 }} severity="info">{msg}</Alert> : null
+            }
+
           </Box>
+
         </Modal>
       </>
     </>
