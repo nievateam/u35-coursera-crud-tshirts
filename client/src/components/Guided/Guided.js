@@ -1,8 +1,3 @@
-
-
-import TableList from './Shirt/TableList'
-import Add from './Shirt/Add'
-
 import { Grid } from '@mui/material'
 
 function Guided() {
