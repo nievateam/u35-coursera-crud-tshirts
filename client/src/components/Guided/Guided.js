@@ -10,10 +10,10 @@ function Guided() {
     
       <>
           <Grid container sx={{ pt: 4 }}>
-            <TableList />
+            {/*  */}
           </Grid>
           <Grid container sx={{ pt: 4 }}>
-            <Add />
+            {/*  */}
           </Grid>
       </>  
   )

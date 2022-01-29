@@ -5,12 +5,10 @@ import Layout from './components/Layout/Layout';
 import Project from './components/Project/Project';
 
 import CssBaseline from '@mui/material/CssBaseline';
-import ShirtState from './context/Shirt/ShirtState'
+
 
 function Router() {
 	return (
-
-		<ShirtState>
 			<CssBaseline>
 				<BrowserRouter>
 					<Routes>
@@ -21,7 +19,6 @@ function Router() {
 					</Routes>
 				</BrowserRouter>
 			</CssBaseline>
-		</ShirtState>
 	)
 }
 
