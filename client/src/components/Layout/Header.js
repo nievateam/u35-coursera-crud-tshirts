@@ -19,8 +19,16 @@ export default function Header() {
               Guided
             </Button>
 
+            <Button to="/" variant="" component={RouterLink}>
+              Develop
+            </Button>
+
             <Button to="/project" variant="" component={RouterLink}>
               Project
+            </Button>
+
+            <Button to="/project" variant="" component={RouterLink}>
+              Completed
             </Button>
           </Toolbar>
         </AppBar>
