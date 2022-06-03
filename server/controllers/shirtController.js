@@ -26,16 +26,15 @@ exports.shirt_create_post = async (req, res) => {
 
   try {
     
-    const newShirt = new Shirt({ name, description, image, price })
-
-    await newShirt.save()
+    const newShirt = await Shirt.create({ name, description, image, price })
 
     res.json({
       msg: 'A new article has been created.',
+      data: newShirt
     })
 
   } catch (error) {
-    res.json({
+    res.status(500).json({
       msg: 'There was an error creating the article.',
     })
   }
@@ -60,7 +59,7 @@ exports.shirt_update_put = async (req, res) => {
 
   } catch (error) {
 
-    res.json({
+    res.status(500).json({
       msg: 'There was an error updating the article.',
     })
   }
