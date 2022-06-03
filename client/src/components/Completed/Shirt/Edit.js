@@ -154,5 +154,5 @@ export default function Edit({ uuid }) {
 }
 
 Edit.propTypes = {
-  uuid: PropTypes.String,
+  uuid: PropTypes.string,
 }

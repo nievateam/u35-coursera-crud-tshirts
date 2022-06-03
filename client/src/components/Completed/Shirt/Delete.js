@@ -93,5 +93,5 @@ export default function Delete({ uuid }) {
 }
 
 Delete.propTypes = {
-  uuid: PropTypes.String,
+  uuid: PropTypes.string,
 }
