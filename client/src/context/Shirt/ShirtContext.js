@@ -1,5 +1,5 @@
 import { createContext } from 'react'
 
-const ShirtContext = createContext('null')
+const ShirtContext = createContext(null)
 
 export default ShirtContext
