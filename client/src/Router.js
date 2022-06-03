@@ -16,7 +16,7 @@ function Router() {
             <Route index element={<Guided />} />
             <Route path="/develop" element={<Develop />} />
             <Route path="/project" element={<Project />} />
-            <Route path="/guided" element={<Completed />} />
+            <Route path="/completed" element={<Completed />} />
           </Route>
         </Routes>
       </BrowserRouter>
